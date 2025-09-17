@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Egg Timer</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"><!-- Responsive layout -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="container" role="main"><!-- semantic main -->
+    <h1>Egg Timer</h1>
+    <section class="settings-section">
+      <div class="presets" aria-label="Egg presets"><!-- Preset buttons -->
+        <button class="preset-btn" data-minutes="4" aria-label="Soft boiled egg, 4 minutes">Soft</button>
+        <button class="preset-btn" data-minutes="6" aria-label="Medium boiled egg, 6 minutes">Medium</button>
+        <button class="preset-btn" data-minutes="10" aria-label="Hard boiled egg, 10 minutes">Hard</button>
+      </div>
+      <div class="timer-settings">
+  <label for="minutes">Set Minutes:</label>
+  <input type="number" id="minutes" min="0" max="120" value="5" aria-label="Set timer minutes">
+  <label for="seconds">Set Seconds:</label>
+  <input type="number" id="seconds" min="0" max="59" value="0" aria-label="Set timer seconds">
+</div>
+      <div class="alarm-select">
+        <label for="alarmSelect">Alarm Sound:</label>
+        <select id="alarmSelect" aria-label="Select alarm sound">
+          <option value="alarm_clock">Classic</option>
+          <option value="bell">Bell</option>
+          <option value="digital_watch_alarm">Digital</option>
+        </select>
+      </div>
+      <div class="dark-mode-toggle">
+        <label for="darkModeToggle">Dark Mode</label>
+        <input type="checkbox" id="darkModeToggle" aria-label="Toggle dark mode">
+      </div>
+    </section>
+    <section class="timer-section">
+      <div class="progress-bar-container" aria-label="Timer progress">
+        <div class="progress-bar" id="progressBar"></div>
+      </div>
+      <div class="countdown" id="countdown" aria-live="polite" aria-label="Time remaining">05:00</div>
+      <div class="buttons">
+        <button id="startBtn" aria-label="Start timer">Start</button>
+        <button id="pauseBtn" aria-label="Pause timer">Pause</button>
+        <button id="resetBtn" aria-label="Reset timer">Reset</button>
+      </div>
+      <audio id="alarmSound"></audio>
+    </section>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>
